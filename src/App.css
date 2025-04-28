@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
+:root {
+  --primary: #6b46c1;
+  --secondary: #f6ad55;
+  --accent1: #68d391;
+  --accent2: #63b3ed;
+  --accent3: #fc8181;
+  --bg: #f7fafc;
+  --text: #2d3748;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', 'Marker Felt', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='smallGrid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='%23e2e8f0' stroke-width='1'/%3E%3C/pattern%3E%3Cpattern id='wavePattern' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 0 25 Q 50 0, 100 25 T 200 25' fill='none' stroke='%23e2e8f0' stroke-width='2'/%3E%3Cpath d='M 0 75 Q 50 50, 100 75 T 200 75' fill='none' stroke='%23e2e8f0' stroke-width='2'/%3E%3Cpath d='M 0 125 Q 50 100, 100 125 T 200 125' fill='none' stroke='%23e2e8f0' stroke-width='2'/%3E%3Cpath d='M 0 175 Q 50 150, 100 175 T 200 175' fill='none' stroke='%23e2e8f0' stroke-width='2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23wavePattern)'/%3E%3C/svg%3E");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section styling */
+section {
+  padding: 70px 0;
+  position: relative;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--secondary);
+  border-radius: 5px;
+}
+
+/* Corner dots for cards */
+.corner-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.top-left {
+  top: -7px;
+  left: -7px;
+  background-color: var(--secondary);
+}
+
+.top-right {
+  top: -7px;
+  right: -7px;
+  background-color: var(--accent3);
+}
+
+.bottom-left {
+  bottom: -7px;
+  left: -7px;
+  background-color: var(--accent1);
+}
+
+.bottom-right {
+  bottom: -7px;
+  right: -7px;
+  background-color: var(--accent2);
+}
+
+/* Doodle elements */
+.doodle {
+  position: absolute;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.circle-doodle {
+  width: 100px;
+  height: 100px;
+  border: 3px dashed #cbd5e0;
+  border-radius: 50%;
+}
+
+.squiggle-doodle {
+  width: 150px;
+  height: 50px;
+  background-image: url("data:image/svg+xml,%3Csvg width='150' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 25 Q 37.5 0, 75 25 T 150 25' fill='none' stroke='%23cbd5e0' stroke-width='3'/%3E%3C/svg%3E");
+}
+
+.star-doodle {
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0 L18 10 L28 10 L20 15 L23 25 L15 19 L7 25 L10 15 L2 10 L12 10 Z' fill='none' stroke='%23cbd5e0' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* CV Button */
+.cv-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px dashed var(--primary);
+  border-radius: 8px;
+  background-color: white;
+  color: var(--primary);
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.cv-button:hover {
+  background-color: var(--primary);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Social Icons */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: transform 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.github {
+  background-color: #333;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.email {
+  background-color: #ea4335;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.dribbble {
+  background-color: #ea4c89;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .timeline::after {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item::after {
+    left: 15px;
+  }
+  
+  .right {
+    left: 0;
   }
 }
