@@ -465,7 +465,12 @@
     
     .landing-text {
       padding-right: 0;
-      margin-bottom: 50px;
+      order: 2; /* Change order to appear after the image */
+    }
+    
+    .landing-image {
+      order: 1; /* Change order to appear before the text content */
+      margin-bottom: 30px; /* Reduce margin-bottom of the image */
     }
     
     .landing-description {
@@ -486,14 +491,20 @@
     }
     
     .hero-frame {
-      margin-bottom: 60px;
+      margin-bottom: 20px; /* Reduce margin to tighten spacing */
+    }
+
+    /* Fix scroll indicator position for mobile */
+    .scroll-indicator {
+      bottom: 70px; /* Adjust position to be more visible */
     }
   }
   
   @media (max-width: 768px) {
     .landing-page {
-        padding-top: 100px;
-      }
+      padding-top: 100px;
+      min-height: calc(100vh - 70px); /* Adjust to make sure content fits better */
+    }
     
     .landing-title {
       font-size: 2.5rem;
@@ -537,5 +548,14 @@
     .badge3 {
       bottom: -15px;
       right: 30px;
+    }
+
+    /* Make scroll indicator more visible in mobile */
+    .scroll-indicator {
+      left: 35%;
+      bottom: -20px;
+      transform: translateX(-30%) scale(0.3);
+      padding: 8px;
+      border-radius: 20px;
     }
   }
