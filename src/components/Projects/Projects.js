@@ -1,31 +1,33 @@
 import React from 'react';
 import './Projects.css';
-
+import first from '../../assets/image copy 5.png';
+import second from '../../assets/image copy 6.png';
+import third from '../../assets/image copy 7.png';
 const Projects = () => {
   const projectsData = [
     {
-      title: "Smart Learning Platform",
-      image: "/placeholder-project1.jpg",
-      description: "An AI-powered learning platform that adapts to student's learning style and provides personalized content recommendations.",
-      tags: ["React", "Node.js", "TensorFlow"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Exploring Neural Machine Translation with Attention Mechanisms ",
+      image: first,
+      description: "Created a neural machine translation model using attention mechanisms to improve translation accuracy and fluency.",
+      tags: ["Python", "Pytorch", "TensorFlow", "NLP"],
+      demoLink: "https://github.com/hansubhai2006/Exploring-Neural-Machine-Translation-with-Attention-Mechanisms-",
+      githubLink: "https://github.com/hansubhai2006/Exploring-Neural-Machine-Translation-with-Attention-Mechanisms-"
     },
     {
-      title: "EcoTrack Mobile App",
-      image: "/placeholder-project2.jpg",
-      description: "A mobile application that helps users track and reduce their carbon footprint through daily sustainable actions and challenges.",
-      tags: ["React Native", "Firebase", "Maps API"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Beijing Multi-Site Air Quality Project ",
+      image: second,
+      description: "Analyzed and visualized air quality data from multiple sites in Beijing to identify pollution patterns and trends.",
+      tags: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+      demoLink: "https://github.com/hansubhai2006/-Beijing-Multi-Site-Air-Quality-Project-",
+      githubLink: "https://github.com/hansubhai2006/-Beijing-Multi-Site-Air-Quality-Project-"
     },
     {
-      title: "Community Marketplace",
-      image: "/placeholder-project3.jpg",
-      description: "A peer-to-peer marketplace platform for local communities to share, sell, or exchange goods and services within their neighborhood.",
-      tags: ["Vue.js", "Express", "MongoDB"],
-      demoLink: "#",
-      githubLink: "#"
+      title: "Customer Segmentation ",
+      image: third,
+      description: "Developed a customer segmentation model using clustering techniques to identify distinct customer groups for targeted marketing.",
+      tags: ["Python", "Scikit-learn", "K-Means", "Clustering"],
+      demoLink: "https://github.com/hansubhai2006/Customer-Segmentation-",
+      githubLink: "https://github.com/hansubhai2006/Customer-Segmentation-"
     }
   ];
 

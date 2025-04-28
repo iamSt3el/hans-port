@@ -492,8 +492,8 @@
   
   @media (max-width: 768px) {
     .landing-page {
-      padding: 100px 0 60px;
-    }
+        padding-top: 100px;
+      }
     
     .landing-title {
       font-size: 2.5rem;

@@ -1,19 +1,31 @@
-.timeline {
+.education-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .timeline {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px 0;
   }
   
   .timeline::after {
     content: '';
     position: absolute;
-    width: 4px;
-    background-color: black;
+    width: 6px;
+    background: linear-gradient(to bottom,
+      var(--primary) 0%,
+      var(--accent2) 50%,
+      var(--accent1) 100%);
     top: 0;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 4px;
+    border-radius: 6px;
+    z-index: 1;
   }
   
   .timeline-item {
@@ -21,18 +33,24 @@
     position: relative;
     width: 50%;
     box-sizing: border-box;
+    perspective: 1000px;
+    margin-bottom: 30px;
   }
   
   .timeline-item::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border: 4px solid var(--primary);
-    top: 15px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    z-index: 1;
+    top: 25px;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 4px white, 0 0 0 6px;
+  }
+  
+  .timeline-item:hover::after {
+    transform: scale(1.2);
   }
   
   .left {
@@ -44,40 +62,167 @@
   }
   
   .left::after {
-    right: -10px;
+    right: -15px;
+    color: var(--accent2);
   }
   
   .right::after {
-    left: -10px;
+    left: -15px;
+    color: var(--primary);
   }
   
   .timeline-content {
-    padding: 20px;
-    background-color: white;
     position: relative;
     border: 3px solid black;
     border-radius: 15px;
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 25px;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    z-index: 5;
+  }
+  
+  .timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.15);
+  }
+  
+  .left .timeline-content {
+    border-left: 8px solid var(--accent2);
+  }
+  
+  .right .timeline-content {
+    border-left: 8px solid var(--primary);
   }
   
   .timeline-date {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary);
+    color: white;
     font-weight: bold;
-    color: var(--primary);
-    margin-bottom: 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .right .timeline-date {
+    background-color: var(--accent2);
   }
   
   .timeline-title {
     margin-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .timeline-title::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    background-color: var(--secondary);
+    border-radius: 2px;
+  }
+  
+  .timeline-institution {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #4a5568;
+  }
+  
+  .institution-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
   }
   
   .timeline-desc {
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 5px;
   }
   
+  .timeline-achievements {
+    margin-top: 15px;
+  }
+  
+  .achievement-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .achievement-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    color: var(--accent1);
+  }
+  
+  /* Year marker */
+  .year-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary);
+    color: white;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    z-index: 3;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    margin-top: -20px;
+  }
+  
+  /* Decorative elements */
+  .corner-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .top-left {
+    top: -7px;
+    left: -7px;
+    background-color: var(--secondary);
+  }
+  
+  .top-right {
+    top: -7px;
+    right: -7px;
+    background-color: var(--accent3);
+  }
+  
+  .bottom-left {
+    bottom: -7px;
+    left: -7px;
+    background-color: var(--accent1);
+  }
+  
+  .bottom-right {
+    bottom: -7px;
+    right: -7px;
+    background-color: var(--accent2);
+  }
+  
+  /* Responsive styles */
   @media (max-width: 768px) {
     .timeline::after {
       left: 31px;
+    }
+    
+    .year-marker {
+      left: 31px;
+      transform: none;
     }
     
     .timeline-item {
@@ -93,4 +238,92 @@
     .right {
       left: 0;
     }
+    
+    .right::after {
+      border-color: var(--primary);
+    }
+    
+    .left .timeline-content,
+    .right .timeline-content {
+      border-left-width: 8px;
+    }
+  }
+  
+  /* Animation for timeline items */
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+  }
+  
+  .right {
+    animation: fadeInRight 0.8s ease-out forwards;
+  }
+  
+  /* Staggered animations */
+  .timeline-item:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .timeline-item:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  /* Education doodles */
+  .education-doodle {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.5;
+  }
+  
+  .edu-doodle1 {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: 5%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z' fill='none' stroke='%23cbd5e0' stroke-width='3'/%3E%3C/svg%3E");
+  }
+  
+  .edu-doodle2 {
+    width: 120px;
+    height: 60px;
+    bottom: 15%;
+    right: 10%;
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 30 Q 40 0, 70 30 T 130 30' fill='none' stroke='%23cbd5e0' stroke-width='3'/%3E%3C/svg%3E");
+  }
+  
+  .edu-doodle3 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 20%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='25' fill='none' stroke='%23cbd5e0' stroke-width='3' stroke-dasharray='5,5'/%3E%3C/svg%3E");
+  }
+  
+  .edu-doodle4 {
+    width: 80px;
+    height: 80px;
+    bottom: 40%;
+    left: 15%;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='60' height='60' rx='10' ry='10' fill='none' stroke='%23cbd5e0' stroke-width='3' stroke-dasharray='8,4'/%3E%3C/svg%3E");
   }

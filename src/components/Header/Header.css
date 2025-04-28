@@ -140,8 +140,8 @@ header {
     .nav-links {
       position: fixed;
       top: 0;
-      right: -50%;
-      width: 50%;
+      right: -100%;
+      width: 70%;
       height: 100vh;
       background-color: white;
       flex-direction: column;

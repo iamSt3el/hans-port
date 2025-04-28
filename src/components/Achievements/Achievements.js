@@ -4,8 +4,8 @@ import './Achievements.css';
 const Achievements = () => {
   const achievementsData = [
     {
-      title: "Hackathon Winner",
-      description: "First place at the Regional Hackathon 2024, building an innovative solution for sustainable urban transportation.",
+      title: "Participation in 48 Hackathon",
+      description: "Participated in a 48-hour hackathon organized by the university, focusing on innovative solutions for real-world problems.",
       date: "March 2024",
       color: "var(--secondary)",
       icon: (
@@ -19,19 +19,8 @@ const Achievements = () => {
       )
     },
     {
-      title: "Dean's List Scholar",
-      description: "Recognized for academic excellence with a place on the Dean's List for three consecutive semesters.",
-      date: "2022-2024",
-      color: "var(--accent1)",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-        </svg>
-      )
-    },
-    {
-      title: "Coding Competition Finalist",
-      description: "Finalist in the National Collegiate Coding Championship, competing against top CS students nationwide.",
+      title: "WebThone Hackathon ",
+      description: "Participated in the WebThone Hackathon, where I collaborated with a team to develop a web application that addresses environmental issues.",
       date: "November 2023",
       color: "var(--accent2)",
       icon: (
@@ -42,17 +31,6 @@ const Achievements = () => {
           <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
           <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
           <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
-        </svg>
-      )
-    },
-    {
-      title: "Open Source Contributor",
-      description: "Active contributor to popular open source projects with over 50+ accepted pull requests and recognized community contributions.",
-      date: "2023-Present",
-      color: "var(--accent3)",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent3)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
         </svg>
       )
     }

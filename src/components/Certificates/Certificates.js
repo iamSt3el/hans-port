@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Certificates.css';
+import first from '../../assets/image copy 2.png';
+import second from '../../assets/image copy 3.png';
+import third from '../../assets/image copy 4.png';
 
 const Certificates = () => {
   const [animated, setAnimated] = useState(false);
@@ -15,12 +18,12 @@ const Certificates = () => {
 
   const certificatesData = [
     {
-      title: "Advanced Web Development",
-      organization: "Frontend Masters",
-      description: "Comprehensive training in modern frontend development with React, Redux, and responsive design principles.",
-      issueDate: "July 2024",
-      image: "/api/placeholder/400/180",
-      badgeText: "Professional",
+      title: "Getting Started with AI and Machine Learning",
+      organization: "LinkedIn Learning",
+      description: "Training covering Neural Networks, Machine Learning, and Artificial Intelligence (AI)",
+      issueDate: "February 2023",
+      image: first,
+      badgeText: "Learning Path Completion",
       category: "frontend",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -31,12 +34,12 @@ const Certificates = () => {
       )
     },
     {
-      title: "Python for Data Science",
-      organization: "DataCamp",
-      description: "Data analysis and visualization using Python libraries like Pandas, NumPy, and Matplotlib.",
+      title: "Data Structures and Algorithms",
+      organization: "GeeksforGeeks",
+      description: "230-hour self-paced course on Data Structures and Algorithms",
       issueDate: "March 2024",
-      image: "/api/placeholder/400/180",
-      badgeText: "Specialist",
+      image: second,
+      badgeText: "Course Completion",
       category: "data",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -46,12 +49,12 @@ const Certificates = () => {
       )
     },
     {
-      title: "UI/UX Design Fundamentals",
-      organization: "Udemy",
-      description: "Design principles, wireframing, prototyping and user research for creating exceptional user experiences.",
-      issueDate: "October 2023",
-      image: "/api/placeholder/400/180",
-      badgeText: "Advanced",
+      title: "WEB-A-THON",
+      organization: "ARENA & Lovely Professional University",
+      description: "24-hour Hackathon organized by Student Organisation ARENA under the Division of Youth Affairs, Student Welfare Wing, LPU in collaboration with AIREV",
+      issueDate: "September 2024",
+      image: third,
+      badgeText: "Participation",
       category: "design",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -113,7 +116,7 @@ const Certificates = () => {
                     </svg>
                     {certificate.issueDate}
                   </span>
-                  <a href="#" className="certificate-view">
+                  <a href={certificate.image} className="certificate-view">
                     View Certificate
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>

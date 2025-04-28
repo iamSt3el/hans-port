@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './LandingPage.css';
+import ProfileImage from '../../assets/image.png'; 
+
 
 const LandingPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +61,7 @@ const LandingPage = () => {
         <div className={`landing-content ${isVisible ? 'visible' : ''}`}>
           <div className="landing-text">
             <h1 className="landing-title">
-              Hello, I'm<span className="highlight"> Student</span>
+              Hello, I'm<span className="highlight"> Hans Raj</span>
             </h1>
             
             <div className="animated-subtitle">
@@ -101,7 +103,7 @@ const LandingPage = () => {
           <div className="landing-image">
             <div className="hero-frame">
               <div className="hero-content">
-                <img src="/api/placeholder/400/400" alt="Student" className="hero-img" />
+                <img src={ProfileImage } alt="Student" className="hero-img" />
                 
                 <div className="floating-badge badge1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
