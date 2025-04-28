@@ -191,31 +191,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-        
-        {/* Availability Card */}
-        <div className="availability-card">
-          <div className="corner-dot top-left"></div>
-          <div className="corner-dot top-right"></div>
-          <div className="corner-dot bottom-left"></div>
-          <div className="corner-dot bottom-right"></div>
-          
-          <div className="availability-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          
-          <h3 className="availability-title">Available for Freelance Work</h3>
-          <p className="availability-text">Currently taking on select freelance projects and open to discussing new opportunities.</p>
-          
-          <a href="#" className="cv-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{marginRight: '5px'}}>
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-            </svg>
-            Let's Chat
-          </a>
-        </div>
       </div>
       
       {/* Floating doodles */}
