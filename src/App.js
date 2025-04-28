@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header/Header';
+import LandingPage from './components/LandingPage/LandingPage';
 import AboutMe from './components/AboutMe/AboutMe';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <Header />
       <main>
+        <LandingPage />
         <AboutMe />
         <Skills />
         <Projects />

@@ -12,11 +12,25 @@
     position: relative;
     padding: 30px;
     background-color: white;
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1;
+  }
+  
+  .about-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.15);
   }
   
   .about-content p {
     margin-bottom: 15px;
     line-height: 1.6;
+  }
+  
+  .about-content p:first-of-type {
+    font-size: 1.2em;
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
   }
   
   .social-links {
@@ -28,53 +42,305 @@
   .about-image {
     flex: 2;
     position: relative;
+    padding: 20px;
+  }
+  
+  .profile-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    perspective: 1000px;
+    transform-style: preserve-3d;
   }
   
   .profile-frame {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 3px dashed black;
+    width: 280px;
+    height: 280px;
+    border-radius: 20px;
+    border: 3px solid black;
     overflow: hidden;
     position: relative;
     margin: 0 auto;
+    background-color: white;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 2;
+  }
+  
+  .profile-wrapper:hover .profile-frame {
+    transform: rotateY(10deg) rotateX(5deg);
   }
   
   .profile-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .profile-frame:hover .profile-image {
+    transform: scale(1.05);
+  }
+  
+  /* Multiple decorative circles */
+  .doodle-circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  
+  .profile-wrapper:hover .doodle-circles {
+    transform: translateZ(-30px) rotateY(-5deg) rotateX(-3deg);
   }
   
   .doodle-circle {
     position: absolute;
-    width: 320px;
-    height: 320px;
     border-radius: 50%;
-    border: 3px dashed black;
+    border-style: dashed;
+    border-width: 3px;
+    opacity: 0.8;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  
+  .circle1 {
+    width: 300px;
+    height: 300px;
     top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10px;
+    border-color: var(--primary);
     z-index: -1;
   }
   
-  .floating-dot {
+  .circle2 {
+    width: 260px;
+    height: 260px;
+    top: 10px;
+    left: 30px;
+    border-color: var(--secondary);
+    z-index: -2;
+  }
+  
+  .circle3 {
+    width: 240px;
+    height: 240px;
+    top: 20px;
+    left: 40px;
+    border-color: var(--accent1);
+    z-index: -3;
+  }
+  
+  /* Decorative elements */
+  .decoration-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .floating-shape {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 3;
+    animation: float 4s infinite ease-in-out;
+  }
+  
+  .shape1 {
+    top: -15px;
+    right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z' fill='none' stroke='%23f6ad55' stroke-width='2'/%3E%3C/svg%3E");
+    animation-delay: 0.5s;
+  }
+  
+  .shape2 {
+    bottom: 10px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5' fill='none' stroke='%2363b3ed' stroke-width='2'/%3E%3C/svg%3E");
+    animation-delay: 1s;
+  }
+  
+  .shape3 {
+    top: 50%;
+    right: -20px;
+    width: 35px;
+    height: 35px;
+    transform: translateY(-50%);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='35' height='35' viewBox='0 0 24 24'%3E%3Cpath d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z' fill='none' stroke='%2368d391' stroke-width='2'/%3E%3C/svg%3E");
+    animation-delay: 1.5s;
+  }
+  
+  /* Colorful dots */
+  .dot {
     position: absolute;
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    z-index: 3;
   }
   
   .dot1 {
-    top: 20%;
-    right: 15%;
+    top: 20px;
+    right: 30px;
     background-color: var(--secondary);
   }
   
   .dot2 {
-    bottom: 30%;
-    left: 10%;
+    bottom: 30px;
+    left: 40px;
     background-color: var(--accent2);
+  }
+  
+  .dot3 {
+    top: 50%;
+    left: 0;
+    background-color: var(--accent3);
+  }
+  
+  .dot4 {
+    bottom: 0;
+    right: 80px;
+    background-color: var(--accent1);
+  }
+  
+  /* Image corner decorations */
+  .corner-decoration {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 4;
+  }
+  
+  .top-left-corner {
+    top: -5px;
+    left: -5px;
+    border-top: 5px solid var(--primary);
+    border-left: 5px solid var(--primary);
+    border-top-left-radius: 10px;
+  }
+  
+  .top-right-corner {
+    top: -5px;
+    right: -5px;
+    border-top: 5px solid var(--accent2);
+    border-right: 5px solid var(--accent2);
+    border-top-right-radius: 10px;
+  }
+  
+  .bottom-left-corner {
+    bottom: -5px;
+    left: -5px;
+    border-bottom: 5px solid var(--accent1);
+    border-left: 5px solid var(--accent1);
+    border-bottom-left-radius: 10px;
+  }
+  
+  .bottom-right-corner {
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 5px solid var(--secondary);
+    border-right: 5px solid var(--secondary);
+    border-bottom-right-radius: 10px;
+  }
+  
+  /* Fun polaroid photo tape effect */
+  .photo-tape {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: rotate(-30deg);
+    top: -5px;
+    left: 30px;
+    z-index: 5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photo-tape2 {
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: rotate(25deg);
+    bottom: -5px;
+    right: 40px;
+    z-index: 5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* CV button styling */
+  .cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: 3px dashed var(--primary);
+    border-radius: 8px;
+    background-color: white;
+    color: var(--primary);
+    font-weight: bold;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .cv-button:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .about-container {
+      flex-direction: column-reverse;
+      gap: 40px;
+    }
+    
+    .profile-wrapper {
+      width: 280px;
+      height: 280px;
+    }
+    
+    .profile-frame {
+      width: 240px;
+      height: 240px;
+    }
+    
+    .circle1 {
+      width: 260px;
+      height: 260px;
+    }
+    
+    .circle2 {
+      width: 220px;
+      height: 220px;
+    }
+    
+    .circle3 {
+      width: 200px;
+      height: 200px;
+    }
   }
   
   @media (max-width: 768px) {
@@ -83,13 +349,33 @@
       gap: 30px;
     }
     
-    .profile-frame {
+    .profile-wrapper {
       width: 250px;
       height: 250px;
+    }
+    
+    .profile-frame {
+      width: 220px;
+      height: 220px;
     }
     
     .doodle-circle {
       width: 270px;
       height: 270px;
+    }
+    
+    .circle1 {
+      width: 230px;
+      height: 230px;
+    }
+    
+    .circle2 {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .circle3 {
+      width: 180px;
+      height: 180px;
     }
   }

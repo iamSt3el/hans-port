@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './AboutMe.css';
 
 const AboutMe = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Detect when the About section enters viewport
+    const handleScroll = () => {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const rect = aboutSection.getBoundingClientRect();
+        const isInView = rect.top < window.innerHeight * 0.75 && rect.bottom >= 0;
+        
+        if (isInView && !isVisible) {
+          setIsVisible(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Check initial state
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isVisible]);
+
   return (
     <section id="about">
       <div className="container">
@@ -51,12 +76,33 @@ const AboutMe = () => {
           </div>
           
           <div className="about-image">
-            <div className="profile-frame">
-              <img src="/placeholder-profile.jpg" alt="Profile" className="profile-image" />
+            <div className="profile-wrapper">
+              <div className="profile-frame">
+                <div className="corner-decoration top-left-corner"></div>
+                <div className="corner-decoration top-right-corner"></div>
+                <div className="corner-decoration bottom-left-corner"></div>
+                <div className="corner-decoration bottom-right-corner"></div>
+                <div className="photo-tape"></div>
+                <div className="photo-tape2"></div>
+                <img src="/api/placeholder/400/400" alt="Profile" className="profile-image" />
+              </div>
+              
+              <div className="doodle-circles">
+                <div className="doodle-circle circle1"></div>
+                <div className="doodle-circle circle2"></div>
+                <div className="doodle-circle circle3"></div>
+              </div>
+              
+              <div className="decoration-elements">
+                <div className="floating-shape shape1"></div>
+                <div className="floating-shape shape2"></div>
+                <div className="floating-shape shape3"></div>
+                <div className="dot dot1"></div>
+                <div className="dot dot2"></div>
+                <div className="dot dot3"></div>
+                <div className="dot dot4"></div>
+              </div>
             </div>
-            <div className="doodle-circle"></div>
-            <div className="floating-dot dot1"></div>
-            <div className="floating-dot dot2"></div>
           </div>
         </div>
       </div>
